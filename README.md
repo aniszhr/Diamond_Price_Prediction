@@ -21,9 +21,14 @@ The dataset is obtained from [here](https://www.kaggle.com/datasets/shivam2503/d
 <p>The data is loaded and preprocessed to remove unwanted features. The categorical features are encoded ordinally. After that the data is then splitted into train-validation-test sets with a ratio of 60:20:20.</p>
 
 ### 3.2 Model Pipeline
-<p>A feedforward neura network is built and modified for regression problem. The model is trained with batch size of 64 and epochs for 50 with application of early stopping to prevent from overfitting. 
+<p>A feedforward neural network is built and modified for regression problem. The model is trained with batch size of 64 and epochs for 50 with application of early stopping to prevent from overfitting. The training stops at epoch 8 with training MAE of 794 and validation MAE of 524.
 </p>
 
 ## 4. Results
 <p>The evaluation result obtained is shown in figure below.</p>
  
+ ![img2](https://user-images.githubusercontent.com/72061179/164993514-5b0e9e74-f192-408d-b97f-80f4694c4e38.png)
+
+ 
+ ![result](https://user-images.githubusercontent.com/72061179/164993508-aa3f80c1-bd91-4819-95aa-24276490a170.png)
+
