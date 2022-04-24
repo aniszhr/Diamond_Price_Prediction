@@ -27,7 +27,7 @@ diamond_labels = diamond_features.pop('price')
 print("------------------Features-------------------------")
 print(diamond_features.head())
 print("-----------------Label----------------------")
-print(diamond_label.head())
+print(diamond_labels.head())
 
 #%%
 #5. Ordinal encode categorical features
@@ -43,7 +43,7 @@ diamond_features[['cut','color','clarity']] = ordinal_encoder.fit_transform(diam
 #%%
 #6. Split the data into train-validation-test sets, with a ratio of 60:20:20
 SEED = 12345
-x_train,x_iter,y_train,y_iter = train_test_split(diamond_features,diamond_label,test_size=0.4,random_state=SEED)
+x_train,x_iter,y_train,y_iter = train_test_split(diamond_features,diamond_labels,test_size=0.4,random_state=SEED)
 x_val,x_test,y_val,y_test = train_test_split(x_iter,y_iter,test_size=0.5,random_state=SEED)
 
 #7. Perform feature scaling, using training data for fitting
@@ -59,10 +59,10 @@ x_test = standard_scaler.transform(x_test)
 
 #%%
 #8. Create a feedforward neural network using TensorFlow Keras
-number_input = x_train.shape[-1]
+num_input = x_train.shape[-1]
 
 model = tf.keras.Sequential()
-model.add(tf.keras.layers.InputLayer(input_shape=number_input))
+model.add(tf.keras.layers.InputLayer(input_shape=num_input))
 model.add(tf.keras.layers.Dense(128,activation='relu'))
 model.add(tf.keras.layers.Dense(64,activation='relu'))
 model.add(tf.keras.layers.Dense(32,activation='relu'))
