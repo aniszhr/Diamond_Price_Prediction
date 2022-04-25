@@ -24,6 +24,9 @@ The dataset is obtained from [here](https://www.kaggle.com/datasets/shivam2503/d
 <p>A feedforward neural network is built and modified for regression problem. The model is trained with batch size of 64 and epochs for 50 with application of early stopping to prevent from overfitting. The training stops at epoch 8 with training MAE of 794 and validation MAE of 524.
 </p>
 
+![model_p2](https://user-images.githubusercontent.com/72061179/165106242-a5e7df6b-8038-4c88-bb7b-49c09eea00d4.png)
+
+
 ## 4. Results
 <p>The evaluation result obtained is shown in figure below.</p>
  
