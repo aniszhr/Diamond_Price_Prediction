@@ -80,11 +80,11 @@ model.compile(optimizer='adam',loss='mse',metrics=['mae','mse'])
 import datetime
 import os
 
-base_log_path = r"C:\Users\ANEH\Documents\Deep Learning Class\TensorFlow Deep Learning\Tensorboard\p2_log"
+base_log_path = r"C:\Users\ANEH\Documents\Deep Learning Class\TensorFlow Deep Learning\Tensorboard\project2_log"
 log_path = os.path.join(base_log_path, datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
 tb_callback = tf.keras.callbacks.TensorBoard(log_dir=log_path)
 es_callback = tf.keras.callbacks.EarlyStopping(monitor='val_loss',patience=5,verbose=2)
-EPOCHS = 100
+EPOCHS = 50
 BATCH_SIZE=64
 history = model.fit(x_train,y_train,validation_data=(x_val,y_val),batch_size=BATCH_SIZE,epochs=EPOCHS,callbacks=[tb_callback,es_callback])
 
@@ -105,6 +105,6 @@ plt.plot(predictions,labels,".")
 plt.xlabel("Predictions")
 plt.ylabel("Labels")
 plt.title("Graph of Predictions vs Labels with Test Data")
-save_path = r"C:\Users\ANEH\Documents\Deep Learning Class\AI05_repo_2\img"
+save_path = r"C:\Users\ANEH\Documents\Deep Learning Class\AI05\AI05_repo_2\img"
 plt.savefig(os.path.join(save_path,"result.png"),bbox_inches='tight')
 plt.show()
